@@ -1,0 +1,23 @@
+#!/bin/python3
+alphabet='abcdefghijklmnopqrstuvwxyz'
+
+
+
+key  = ' '
+newMsg= ''
+msg = input('input a msg to encrypt: ')
+print('you want to encrypt:',msg)
+
+key = int(input('enter the number you wanna encrypt: '))
+print("u wanna encrypt using key",key)
+
+for char in msg:
+  pos=alphabet.find(char)
+  # finding an index from (char) in alphabet variable
+  
+  encrypted_position= (pos + key)% 26
+  # use mod (modulo) to get position, incase we go out of range of 
+  # 26 in the alphabet
+  encryptedChar = alphabet[encrypted_position]
+  newMsg +=encryptedChar
+print("Your encrypted message is" , newMsg)
